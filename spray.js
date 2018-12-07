@@ -51,9 +51,10 @@ function sprayChart (opt) {
       }
 
       function gravity(alpha) {
-        var y = height/2
+        // var y = height/2
         return function(d) {
-          var x = d.cluster == 'left' ? width/4 : width*3/4
+          var x = width - d.versionAgeInMonths*50
+          var y = d.applicationId/16000
           d.y += (y - d.y) * alpha
           d.x += (x - d.x) * alpha
         }
